@@ -9,7 +9,7 @@ def decode(im):
             if (blue | green | red) == 0:
                 break
             
-            index = (green << 8) + blue
+            index = (red << 8) + (green << 8) + blue
             lst.append( chr(index) )
 
     return ''.join(lst)
