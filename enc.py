@@ -9,7 +9,7 @@ def encode(text):
     x, y = 0, 0
     for i in text:
         index = ord(i)
-        rgb = ( 0,  (index & 0xFF00) >> 8,  index & 0xFF)
+        rgb = (  (index & 0xFF0000) >> 16,  (index & 0xFF00) >> 8,  index & 0xFF)
         im.putpixel( (x, y),  rgb )
         if x == width - 1:
             x = 0
